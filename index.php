@@ -1,5 +1,6 @@
 <?php
-// filepath: c:\Users\LABE1-PC-19\Documents\VsCode\DisenoWeb\SistemaRol\index.php
+// se llama al archivo del modelo
+require_once __DIR__ . '/models/departamento.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -10,11 +11,7 @@
 </head>
 <body>
     <h1>Formulario de Departamento</h1>
-    <form action="procesar_departamento.php" method="post">
-        <label for="id_departamento">ID Departamento:</label>
-        <input type="number" id="id_departamento" name="id_departamento" required>
-        <br><br>
-
+    <form action="../SistemaRol/controllers/departamentoController.php" method="post">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" maxlength="30">
         <br><br>
@@ -26,6 +23,10 @@
         <label for="area">Área:</label>
         <input type="text" id="area" name="area" maxlength="30">
         <br><br>
+
+        <!-- hidden -->
+         <input type="hidden" name="accion" value="crear">
+
 
         <button type="submit">Guardar</button>
     </form>
